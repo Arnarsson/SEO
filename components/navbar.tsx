@@ -1,11 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { useSession, signOut } from '@/lib/auth-client';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useCustomer } from '@/hooks/useAutumnCustomer';
+import { Logo } from './logo';
 
 // Separate component that only renders when Autumn is available
 function UserCredits() {
@@ -46,39 +46,37 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Link href="/" className="flex items-center">
-              <Image
-                src="/firecrawl-logo-with-fire.webp"
-                alt="Firecrawl"
-                width={120}
-                height={25}
-                priority
-              />
-            </Link>
+            <Logo />
           </div>
 
           <div className="flex items-center space-x-4">
             {session && (
               <>
                 <Link
-                  href="/chat"
+                  href="/services"
                   className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900"
                 >
-                  Basic Chat
+                  Services
                 </Link>
                 <Link
-                  href="/brand-monitor"
+                  href="/case-studies"
                   className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900"
                 >
-                  Brand Monitor
+                  Case Studies
+                </Link>
+                <Link
+                  href="/resources"
+                  className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900"
+                >
+                  Resources
                 </Link>
               </>
             )}
             <Link
-              href="/plans"
+              href="/about"
               className="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900"
             >
-              Plans
+              About
             </Link>
             {session && (
               <UserCredits />
@@ -89,9 +87,9 @@ export function Navbar() {
               <>
                 <Link
                   href="/dashboard"
-                  className="btn-firecrawl-orange inline-flex items-center justify-center whitespace-nowrap rounded-[10px] text-sm font-medium transition-all duration-200 h-8 px-3"
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 inline-flex items-center justify-center whitespace-nowrap rounded-[10px] text-sm font-medium transition-all duration-200 h-8 px-3 shadow-sm hover:shadow-md"
                 >
-                  Dashboard
+                  Client Portal
                 </Link>
                 <button
                   onClick={handleLogout}
@@ -110,10 +108,10 @@ export function Navbar() {
                   Login
                 </Link>
                 <Link 
-                  href="/register"
-                  className="btn-firecrawl-orange inline-flex items-center justify-center whitespace-nowrap rounded-[10px] text-sm font-medium transition-all duration-200 h-8 px-3"
+                  href="/contact"
+                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 inline-flex items-center justify-center whitespace-nowrap rounded-[10px] text-sm font-medium transition-all duration-200 h-8 px-3 shadow-sm hover:shadow-md"
                 >
-                  Register
+                  Get Started
                 </Link>
               </>
             )}

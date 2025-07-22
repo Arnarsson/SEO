@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { ArrowRight, Brain, Target, TrendingUp, Users, Zap, Shield, CheckCircle } from "lucide-react";
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -10,396 +11,300 @@ export default function Home() {
     setOpenFaq(openFaq === index ? null : index);
   };
 
+  const services = [
+    {
+      icon: Brain,
+      title: "AI Strategy Consulting",
+      description: "Develop a comprehensive AI roadmap tailored to your business goals and industry challenges."
+    },
+    {
+      icon: Zap,
+      title: "AI Implementation",
+      description: "End-to-end deployment of AI solutions with seamless integration into your existing systems."
+    },
+    {
+      icon: Users,
+      title: "Team Training",
+      description: "Upskill your workforce with hands-on AI training programs and workshops."
+    },
+    {
+      icon: TrendingUp,
+      title: "Growth Analytics",
+      description: "Track and optimize AI-driven KPIs to maximize ROI and business impact."
+    }
+  ];
+
+  const stats = [
+    { value: "250+", label: "AI Projects Delivered" },
+    { value: "95%", label: "Client Satisfaction" },
+    { value: "3.2x", label: "Average ROI" },
+    { value: "50M+", label: "Data Points Analyzed" }
+  ];
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-white pt-16 pb-24">
-        
+      <section className="relative overflow-hidden bg-gradient-to-br from-gray-50 to-white pt-16 pb-24">
+        <div className="absolute inset-0 bg-grid-gray-100 opacity-50"></div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
+            <div className="inline-flex items-center px-4 py-2 bg-blue-50 rounded-full text-blue-700 text-sm font-medium mb-8 animate-fade-in-up">
+              <Shield className="w-4 h-4 mr-2" />
+              Trusted by Fortune 500 Companies
+            </div>
+            
             <h1 className="text-5xl lg:text-7xl font-bold tracking-tight mb-8 animate-fade-in-up">
-              <span className="block text-zinc-900">FireGEO Monitor</span>
-              <span className="block bg-gradient-to-r from-red-600 to-yellow-500 bg-clip-text text-transparent">
-                AI Brand Visibility Platform
+              <span className="block text-gray-900">Transform Your Business</span>
+              <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                with AI-Powered Growth
               </span>
             </h1>
-            <p className="text-xl lg:text-2xl text-zinc-600 max-w-3xl mx-auto mb-6 animate-fade-in-up animation-delay-200">
-              Track how AI models rank your brand against competitors
+            
+            <p className="text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto mb-8 animate-fade-in-up animation-delay-200">
+              Expert AI consulting to help enterprises leverage artificial intelligence for competitive advantage and exponential growth.
             </p>
+            
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-400">
               <Link
-                href="/brand-monitor"
-                className="btn-firecrawl-orange inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-[10px] text-base font-medium transition-all duration-200 h-12 px-8"
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 whitespace-nowrap rounded-xl text-base font-medium transition-all duration-200 h-12 px-8 shadow-lg hover:shadow-xl"
               >
-                Start Brand Analysis
+                Schedule Free Consultation
+                <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
-                href="/plans"
-                className="btn-firecrawl-default inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-[10px] text-base font-medium transition-all duration-200 h-12 px-8"
+                href="/case-studies"
+                className="inline-flex items-center justify-center gap-2 bg-white border-2 border-gray-200 text-gray-900 hover:border-gray-300 whitespace-nowrap rounded-xl text-base font-medium transition-all duration-200 h-12 px-8"
               >
-                View Pricing
+                View Success Stories
               </Link>
             </div>
-            <p className="mt-6 text-sm text-zinc-500 animate-fade-in-up animation-delay-600">
-              Powered by AI • Real-time Analysis • Competitor Tracking • SEO Insights
-            </p>
           </div>
 
           {/* Stats */}
-          <div className="mt-20 bg-zinc-900 rounded-[20px] p-12 animate-fade-in-scale animation-delay-800">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="text-center animate-fade-in-up animation-delay-1000">
-                <div className="text-4xl font-bold text-white">ChatGPT</div>
-                <div className="text-sm text-zinc-400 mt-1">Claude, Perplexity & More</div>
+          <div className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <div 
+                key={index} 
+                className="text-center animate-fade-in-up" 
+                style={{animationDelay: `${800 + index * 100}ms`}}
+              >
+                <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  {stat.value}
+                </div>
+                <div className="text-sm text-gray-600 mt-1">{stat.label}</div>
               </div>
-              <div className="text-center animate-fade-in-up animation-delay-1000" style={{animationDelay: '1100ms'}}>
-                <div className="text-4xl font-bold text-white">Real-time</div>
-                <div className="text-sm text-zinc-400 mt-1">Analysis</div>
-              </div>
-              <div className="text-center animate-fade-in-up animation-delay-1000" style={{animationDelay: '1200ms'}}>
-                <div className="text-4xl font-bold text-white">Competitor</div>
-                <div className="text-sm text-zinc-400 mt-1">Tracking</div>
-              </div>
-              <div className="text-center animate-fade-in-up animation-delay-1000" style={{animationDelay: '1300ms'}}>
-                <div className="text-4xl font-bold text-white">Actionable</div>
-                <div className="text-sm text-zinc-400 mt-1">Insights</div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Pricing Section */}
+      {/* Services Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gray-50 rounded-[30px] p-16">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-zinc-900 mb-4">
-                Monitor Your Brand Visibility
-              </h2>
-              <p className="text-xl text-zinc-600">
-                Choose the plan that fits your monitoring needs
-              </p>
-            </div>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Comprehensive AI Solutions
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              From strategy to implementation, we provide end-to-end AI consulting services tailored to your business needs.
+            </p>
+          </div>
 
-            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {/* Starter */}
-            <div className="bg-white p-8 rounded-[20px] border border-zinc-200 animate-fade-in-up animation-delay-400 hover:scale-105 transition-all duration-200">
-              <h3 className="text-2xl font-bold mb-2">Starter</h3>
-              <p className="text-zinc-600 mb-6">Perfect for personal brands</p>
-              <div className="mb-6">
-                <span className="text-4xl font-bold">$0</span>
-                <span className="text-zinc-600">/month</span>
-              </div>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  10 brand analyses/month
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  Basic AI providers
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  Email reports
-                </li>
-              </ul>
-              <Link
-                href="/register"
-                className="btn-firecrawl-outline w-full inline-flex items-center justify-center whitespace-nowrap rounded-[10px] text-sm font-medium transition-all duration-200 h-10 px-4"
-              >
-                Start free
-              </Link>
-            </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {services.map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <div 
+                  key={index}
+                  className="group bg-white p-8 rounded-2xl border border-gray-200 hover:border-purple-200 hover:shadow-xl transition-all duration-300 animate-fade-in-up"
+                  style={{animationDelay: `${index * 100}ms`}}
+                >
+                  <div className="w-14 h-14 bg-gradient-to-br from-blue-100 to-purple-100 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <Icon className="w-7 h-7 text-purple-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
+                  <p className="text-gray-600">{service.description}</p>
+                  <Link href="/services" className="inline-flex items-center text-purple-600 font-medium mt-4 group-hover:gap-2 transition-all">
+                    Learn more
+                    <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
-            {/* Pro - Featured */}
-            <div className="bg-white p-8 rounded-[20px] border-2 border-orange-500 relative animate-fade-in-up animation-delay-600 hover:scale-105 transition-all duration-200">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-medium">
-                Most Popular
-              </div>
-              <h3 className="text-2xl font-bold mb-2">Pro</h3>
-              <p className="text-zinc-600 mb-6">For growing businesses</p>
-              <div className="mb-6">
-                <span className="text-4xl font-bold">$49</span>
-                <span className="text-zinc-600">/month</span>
-              </div>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  Unlimited brand analyses
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  All AI providers
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  Real-time alerts
-                </li>
-              </ul>
-              <Link
-                href="/register"
-                className="btn-firecrawl-orange w-full inline-flex items-center justify-center whitespace-nowrap rounded-[10px] text-sm font-medium transition-all duration-200 h-10 px-4"
-              >
-                Start free trial
-              </Link>
-            </div>
+      {/* Process Section */}
+      <section className="py-24 bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Our Proven Process
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              A systematic approach to AI transformation that delivers measurable results.
+            </p>
+          </div>
 
-            {/* Enterprise */}
-            <div className="bg-white p-8 rounded-[20px] border border-zinc-200 animate-fade-in-up animation-delay-800 hover:scale-105 transition-all duration-200">
-              <h3 className="text-2xl font-bold mb-2">Enterprise</h3>
-              <p className="text-zinc-600 mb-6">For agencies & large brands</p>
-              <div className="mb-6">
-                <span className="text-4xl font-bold">Custom</span>
+          <div className="grid md:grid-cols-4 gap-8">
+            {[
+              { step: "01", title: "Discovery", desc: "Analyze your business needs and identify AI opportunities" },
+              { step: "02", title: "Strategy", desc: "Develop a custom AI roadmap aligned with your goals" },
+              { step: "03", title: "Implementation", desc: "Deploy and integrate AI solutions with expert guidance" },
+              { step: "04", title: "Optimization", desc: "Continuously improve and scale your AI capabilities" }
+            ].map((item, index) => (
+              <div key={index} className="relative animate-fade-in-up" style={{animationDelay: `${index * 100}ms`}}>
+                <div className="text-center">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-600 to-purple-600 text-white rounded-full text-2xl font-bold mb-4">
+                    {item.step}
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                  <p className="text-gray-600">{item.desc}</p>
+                </div>
+                {index < 3 && (
+                  <div className="hidden md:block absolute top-8 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-blue-200 to-purple-200"></div>
+                )}
               </div>
-              <ul className="space-y-3 mb-8">
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  Multiple brands
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  API access
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  White-label options
-                </li>
-              </ul>
-              <Link
-                href="/contact"
-                className="btn-firecrawl-outline w-full inline-flex items-center justify-center whitespace-nowrap rounded-[10px] text-sm font-medium transition-all duration-200 h-10 px-4"
-              >
-                Contact sales
-              </Link>
-            </div>
-            </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-            <div className="text-center mt-12">
-              <Link href="/plans" className="text-orange-600 hover:text-orange-700 font-medium">
-                View detailed pricing →
-              </Link>
+      {/* Testimonial Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-12 text-center">
+            <div className="mb-8">
+              <div className="flex justify-center gap-1 mb-6">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-6 h-6 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+              <blockquote className="text-2xl font-medium text-gray-900 mb-6">
+                "AI Growth Advisors transformed our operations. Their strategic approach to AI implementation increased our efficiency by 40% and reduced costs by $2M annually."
+              </blockquote>
+              <div>
+                <p className="font-semibold text-gray-900">Sarah Johnson</p>
+                <p className="text-gray-600">CTO, TechCorp Global</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-
-      {/* CTA Section 1 */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-[30px] p-16 text-center">
-            <h2 className="text-4xl font-bold text-white mb-6">
-              See How AI Models Rank Your Brand
-            </h2>
-            <p className="text-xl text-orange-100 mb-8">
-              Monitor your brand visibility across ChatGPT, Claude, Perplexity and more
-            </p>
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-bold text-white mb-6">
+            Ready to Accelerate Your AI Journey?
+          </h2>
+          <p className="text-xl text-blue-100 mb-8">
+            Join leading companies transforming their business with AI
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/brand-monitor"
-              className="btn-firecrawl-default inline-flex items-center justify-center whitespace-nowrap rounded-[10px] text-base font-medium transition-all duration-200 h-12 px-8"
+              href="/contact"
+              className="inline-flex items-center justify-center gap-2 bg-white text-blue-600 hover:bg-gray-100 whitespace-nowrap rounded-xl text-base font-medium transition-all duration-200 h-12 px-8 shadow-lg"
             >
-              Start Free Analysis
+              Get Started Today
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link
+              href="/resources"
+              className="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-white text-white hover:bg-white/10 whitespace-nowrap rounded-xl text-base font-medium transition-all duration-200 h-12 px-8"
+            >
+              Download AI Readiness Guide
             </Link>
           </div>
         </div>
       </section>
-
 
       {/* FAQs */}
       <section className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-zinc-900 mb-4 animate-fade-in-up">
-              Frequently asked questions
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Frequently Asked Questions
             </h2>
-            <p className="text-xl text-zinc-600 animate-fade-in-up animation-delay-200">
-              Everything you need to know about FireGEO Monitor
+            <p className="text-xl text-gray-600">
+              Everything you need to know about our AI consulting services
             </p>
           </div>
 
           <div className="space-y-4">
-            {/* FAQ 1 */}
-            <div className="bg-gray-50 rounded-[15px] overflow-hidden animate-fade-in-up animation-delay-400">
-              <button
-                onClick={() => toggleFaq(0)}
-                className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-100 transition-colors"
-              >
-                <h3 className="text-lg font-semibold text-zinc-900">
-                  How does FireGEO Monitor work?
-                </h3>
-                <svg
-                  className={`w-5 h-5 text-zinc-500 transition-transform ${openFaq === 0 ? 'rotate-180' : ''}`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+            {[
+              {
+                q: "What industries do you specialize in?",
+                a: "We work across various industries including finance, healthcare, retail, manufacturing, and technology. Our AI solutions are customized to address industry-specific challenges and regulatory requirements."
+              },
+              {
+                q: "How long does a typical AI implementation take?",
+                a: "Implementation timelines vary based on project scope. A pilot project typically takes 8-12 weeks, while enterprise-wide deployments can range from 6-18 months. We provide detailed timelines during our initial assessment."
+              },
+              {
+                q: "What's included in your AI strategy consulting?",
+                a: "Our strategy consulting includes business analysis, AI opportunity assessment, technology stack recommendations, implementation roadmap, ROI projections, and change management planning."
+              },
+              {
+                q: "Do you provide ongoing support after implementation?",
+                a: "Yes, we offer comprehensive support packages including system monitoring, performance optimization, team training, and regular strategy reviews to ensure long-term success."
+              },
+              {
+                q: "How do you ensure data security and compliance?",
+                a: "We follow industry best practices for data security, including encryption, access controls, and compliance with regulations like GDPR, HIPAA, and SOC 2. All solutions are designed with privacy and security as top priorities."
+              }
+            ].map((faq, index) => (
+              <div key={index} className="bg-gray-50 rounded-2xl overflow-hidden">
+                <button
+                  onClick={() => toggleFaq(index)}
+                  className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-100 transition-colors"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {openFaq === 0 && (
-                <div className="px-6 py-6">
-                  <p className="text-zinc-600 leading-relaxed">
-                    FireGEO Monitor analyzes your brand's visibility across major AI platforms like ChatGPT, Claude, and Perplexity. Simply enter your website URL, and we'll show you how AI models rank your brand against competitors, what prompts trigger your appearance, and provide actionable insights to improve your AI visibility.
-                  </p>
-                </div>
-              )}
-            </div>
-
-            {/* FAQ 2 */}
-            <div className="bg-gray-50 rounded-[15px] overflow-hidden animate-fade-in-up animation-delay-400" style={{animationDelay: '500ms'}}>
-              <button
-                onClick={() => toggleFaq(1)}
-                className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-100 transition-colors"
-              >
-                <h3 className="text-lg font-semibold text-zinc-900">
-                  Which AI providers do you monitor?
-                </h3>
-                <svg
-                  className={`w-5 h-5 text-zinc-500 transition-transform ${openFaq === 1 ? 'rotate-180' : ''}`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {openFaq === 1 && (
-                <div className="px-6 py-6">
-                  <p className="text-zinc-600 leading-relaxed">
-                    We monitor all major AI platforms including OpenAI's ChatGPT, Anthropic's Claude, Perplexity, Google's Gemini, and more. Our system continuously updates as new AI providers emerge, ensuring you always have comprehensive visibility across the AI landscape.
-                  </p>
-                </div>
-              )}
-            </div>
-
-            {/* FAQ 3 */}
-            <div className="bg-gray-50 rounded-[15px] overflow-hidden animate-fade-in-up animation-delay-600">
-              <button
-                onClick={() => toggleFaq(2)}
-                className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-100 transition-colors"
-              >
-                <h3 className="text-lg font-semibold text-zinc-900">
-                  How often is the data updated?
-                </h3>
-                <svg
-                  className={`w-5 h-5 text-zinc-500 transition-transform ${openFaq === 2 ? 'rotate-180' : ''}`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {openFaq === 2 && (
-                <div className="px-6 py-6">
-                  <p className="text-zinc-600 leading-relaxed">
-                    Our monitoring runs in real-time. When you request an analysis, we query all AI providers simultaneously to get the most current results. You can run new analyses anytime to track changes in your brand visibility and see how your optimization efforts are performing.
-                  </p>
-                </div>
-              )}
-            </div>
-
-            {/* FAQ 4 */}
-            <div className="bg-gray-50 rounded-[15px] overflow-hidden animate-fade-in-up animation-delay-400" style={{animationDelay: '700ms'}}>
-              <button
-                onClick={() => toggleFaq(3)}
-                className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-100 transition-colors"
-              >
-                <h3 className="text-lg font-semibold text-zinc-900">
-                  What insights will I get?
-                </h3>
-                <svg
-                  className={`w-5 h-5 text-zinc-500 transition-transform ${openFaq === 3 ? 'rotate-180' : ''}`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {openFaq === 3 && (
-                <div className="px-6 py-6">
-                  <p className="text-zinc-600 leading-relaxed">
-                    You'll see your brand's visibility score, competitor rankings, which prompts trigger your appearance, response quality analysis, and specific recommendations to improve your AI presence. The platform also tracks trends over time and alerts you to significant changes.
-                  </p>
-                </div>
-              )}
-            </div>
-
-            {/* FAQ 5 */}
-            <div className="bg-gray-50 rounded-[15px] overflow-hidden animate-fade-in-up animation-delay-800">
-              <button
-                onClick={() => toggleFaq(4)}
-                className="w-full px-6 py-5 text-left flex justify-between items-center hover:bg-gray-100 transition-colors"
-              >
-                <h3 className="text-lg font-semibold text-zinc-900">
-                  How many credits do I need?
-                </h3>
-                <svg
-                  className={`w-5 h-5 text-zinc-500 transition-transform ${openFaq === 4 ? 'rotate-180' : ''}`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              {openFaq === 4 && (
-                <div className="px-6 py-6">
-                  <p className="text-zinc-600 leading-relaxed">
-                    Each brand analysis uses 10 credits (1 credit for initial URL analysis, 9 credits for the full AI provider scan). The free tier includes 100 credits monthly, enough for 10 complete analyses. Pro plans include unlimited analyses for comprehensive monitoring.
-                  </p>
-                </div>
-              )}
-            </div>
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    {faq.q}
+                  </h3>
+                  <svg
+                    className={`w-5 h-5 text-gray-500 transition-transform ${openFaq === index ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {openFaq === index && (
+                  <div className="px-6 py-6">
+                    <p className="text-gray-600 leading-relaxed">
+                      {faq.a}
+                    </p>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 bg-zinc-900">
+      <section className="py-24 bg-gradient-to-br from-gray-900 to-black">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-white mb-6">
-            Start Monitoring Your AI Brand Visibility
+            Start Your AI Transformation Today
           </h2>
-          <p className="text-xl text-zinc-400 mb-8">
-            Take control of how AI models present your brand
+          <p className="text-xl text-gray-400 mb-8">
+            Get a free consultation and custom AI roadmap for your business
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/brand-monitor"
-              className="btn-firecrawl-orange inline-flex items-center justify-center whitespace-nowrap rounded-[10px] text-base font-medium transition-all duration-200 h-12 px-8"
-            >
-              Analyze Your Brand
-            </Link>
-            <Link
-              href="/plans"
-              className="inline-flex items-center justify-center whitespace-nowrap rounded-[10px] text-base font-medium transition-all duration-200 h-12 px-8 bg-zinc-800 text-white hover:bg-zinc-700"
-            >
-              View Pricing
-            </Link>
-          </div>
+          <Link
+            href="/contact"
+            className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 whitespace-nowrap rounded-xl text-base font-medium transition-all duration-200 h-12 px-8 shadow-lg hover:shadow-xl"
+          >
+            Schedule Your Free Consultation
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </section>
     </div>
