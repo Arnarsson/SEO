@@ -2,7 +2,7 @@ interface EnvConfig {
   DATABASE_URL: string;
   BETTER_AUTH_SECRET: string;
   NEXT_PUBLIC_APP_URL: string;
-  AUTUMN_SECRET_KEY: string;
+  AUTUMN_SECRET_KEY?: string;
   NODE_ENV: 'development' | 'production' | 'test';
   
   STRIPE_SECRET_KEY?: string;
@@ -20,7 +20,6 @@ const requiredEnvVars = [
   'DATABASE_URL',
   'BETTER_AUTH_SECRET',
   'NEXT_PUBLIC_APP_URL',
-  'AUTUMN_SECRET_KEY',
 ] as const;
 
 export function validateEnv(): EnvConfig {
@@ -43,7 +42,7 @@ export function validateEnv(): EnvConfig {
     DATABASE_URL: process.env.DATABASE_URL!,
     BETTER_AUTH_SECRET: process.env.BETTER_AUTH_SECRET!,
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL!,
-    AUTUMN_SECRET_KEY: process.env.AUTUMN_SECRET_KEY!,
+    AUTUMN_SECRET_KEY: process.env.AUTUMN_SECRET_KEY,
     NODE_ENV: (process.env.NODE_ENV as EnvConfig['NODE_ENV']) || 'development',
     
     STRIPE_SECRET_KEY: process.env.STRIPE_SECRET_KEY,
