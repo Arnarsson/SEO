@@ -45,7 +45,8 @@ export async function GET(request: Request) {
       
       await pool.end();
     } catch (error: any) {
-      dbStatus = `error: ${error.message}`;
+      dbStatus = `error: ${error.message || 'Unknown error'}`;
+      console.error('Database connection error:', error);
     }
 
     // Check auth config
