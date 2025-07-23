@@ -21,7 +21,23 @@ export const auth = betterAuth({
   emailAndPassword: {
     enabled: true,
   },
-  trustedOrigins: [env.NEXT_PUBLIC_APP_URL],
+  trustedOrigins: (() => {
+    const origins = [
+      env.NEXT_PUBLIC_APP_URL,
+      'http://localhost:3000',
+    ];
+    
+    // Add Vercel preview URLs
+    if (process.env.VERCEL_URL) {
+      origins.push(`https://${process.env.VERCEL_URL}`);
+    }
+    
+    // Add Vercel deployment patterns
+    origins.push('https://*.vercel.app');
+    origins.push('https://*-arnarssons-projects.vercel.app');
+    
+    return origins;
+  })(),
   session: {
     expiresIn: 60 * 60 * 24 * 7, // 7 days
     updateAge: 60 * 60 * 24, // Update session if older than 1 day

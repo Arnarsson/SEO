@@ -40,7 +40,28 @@ export const auth = betterAuth({
       });
     },
   },
-  trustedOrigins: [process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'],
+  trustedOrigins: (() => {
+    const origins = [
+      process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000',
+      'http://localhost:3000',
+    ];
+    
+    // Add Vercel preview URLs
+    if (process.env.VERCEL_URL) {
+      origins.push(`https://${process.env.VERCEL_URL}`);
+    }
+    
+    // Add any custom domains
+    if (process.env.NEXT_PUBLIC_APP_URL && process.env.NEXT_PUBLIC_APP_URL !== 'http://localhost:3000') {
+      origins.push(process.env.NEXT_PUBLIC_APP_URL);
+    }
+    
+    // Add Vercel deployment patterns
+    origins.push('https://*.vercel.app');
+    origins.push('https://*-arnarssons-projects.vercel.app');
+    
+    return origins;
+  })(),
   session: {
     expiresIn: 60 * 60 * 24 * 7, // 7 days
     updateAge: 60 * 60 * 24, // Update session if older than 1 day
