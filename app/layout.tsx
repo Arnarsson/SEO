@@ -18,6 +18,14 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "AI Growth Advisors - AI Brand Visibility Platform",
   description: "Track how AI models rank your brand against competitors",
+  keywords: "AI brand monitoring, brand visibility, AI models, competitor analysis, brand tracking",
+  openGraph: {
+    title: "AI Growth Advisors",
+    description: "Track how AI models rank your brand against competitors",
+    url: "https://aigrowthadvisors.cc",
+    siteName: "AI Growth Advisors",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
