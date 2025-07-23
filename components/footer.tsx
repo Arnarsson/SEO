@@ -12,7 +12,7 @@ export function Footer() {
               <Logo />
             </div>
             <p className="text-sm mb-4">
-              Empowering businesses to harness the full potential of AI for sustainable growth and competitive advantage.
+              Track how AI models rank your brand against competitors.
             </p>
             <div className="flex space-x-4">
               <a

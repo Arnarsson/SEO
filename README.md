@@ -1,6 +1,9 @@
-# AI Growth Advisors - AI Consulting Platform
+<<<<<<< HEAD
+# AI Growth Advisors - AI Brand Visibility Platform
 
-Transform your business with expert AI consulting services. This platform powers AI Growth Advisors' consulting services, client portal, and resource center.
+<img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjh4N3VwdGw2YXg2ZXpvMHBlNDFlejd1MjBpZXBxNHZ5YXJxOGk5OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/x2sTqbCW5m7z0qaNJM/giphy.gif" alt="AI Growth Advisors Demo" width="100%" />
+
+Track how AI models rank your brand against competitors. Get your AI brand monitoring platform running in minutes with authentication, billing, AI chat, and brand monitoring. Zero-config setup with Next.js 15, TypeScript, and PostgreSQL.
 
 ![Next.js](https://img.shields.io/badge/Next.js-15.3-black?style=flat-square&logo=next.js)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue?style=flat-square&logo=typescript)

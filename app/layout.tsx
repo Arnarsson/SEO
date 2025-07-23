@@ -16,12 +16,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AI Growth Advisors - Transform Your Business with AI",
-  description: "Expert AI consulting services to help businesses leverage artificial intelligence for exponential growth. Strategy, implementation, and training.",
-  keywords: "AI consulting, AI strategy, business transformation, artificial intelligence, growth consulting, AI implementation",
+  title: "AI Growth Advisors - AI Brand Visibility Platform",
+  description: "Track how AI models rank your brand against competitors",
+  keywords: "AI brand monitoring, brand visibility, AI models, competitor analysis, brand tracking",
   openGraph: {
     title: "AI Growth Advisors",
-    description: "Transform your business with expert AI consulting",
+    description: "Track how AI models rank your brand against competitors",
     url: "https://aigrowthadvisors.cc",
     siteName: "AI Growth Advisors",
     type: "website",
