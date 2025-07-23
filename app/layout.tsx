@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SaaS Starter",
-  description: "Next.js SaaS Starter with Better Auth",
+  title: "AI Growth Advisors - AI Brand Visibility Platform",
+  description: "Track how AI models rank your brand against competitors",
 };
 
 export default function RootLayout({

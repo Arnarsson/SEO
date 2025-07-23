@@ -19,7 +19,7 @@ export default function Home() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-5xl lg:text-7xl font-bold tracking-tight mb-8 animate-fade-in-up">
-              <span className="block text-zinc-900">FireGEO Monitor</span>
+              <span className="block text-zinc-900">AI Growth Advisors</span>
               <span className="block bg-gradient-to-r from-red-600 to-yellow-500 bg-clip-text text-transparent">
                 AI Brand Visibility Platform
               </span>
