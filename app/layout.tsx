@@ -16,8 +16,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "SaaS Starter",
-  description: "Next.js SaaS Starter with Better Auth",
+  title: "AI Growth Advisors - Transform Your Business with AI",
+  description: "Expert AI consulting services to help businesses leverage artificial intelligence for exponential growth. Strategy, implementation, and training.",
+  keywords: "AI consulting, AI strategy, business transformation, artificial intelligence, growth consulting, AI implementation",
+  openGraph: {
+    title: "AI Growth Advisors",
+    description: "Transform your business with expert AI consulting",
+    url: "https://aigrowthadvisors.cc",
+    siteName: "AI Growth Advisors",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
